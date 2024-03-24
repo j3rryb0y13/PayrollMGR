@@ -34,6 +34,11 @@ const collectEmployees = function() {
 }
 // Display the average salary
 const displayAverageSalary = function(employeesArray) {
+  if (employeesArray.length === 0) {
+    console.log("No employees data available.");
+    return; 
+  }
+
  // TODO: Calculate and display the average salary
  let totalSalary = 0;
 
