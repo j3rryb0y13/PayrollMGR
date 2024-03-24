@@ -10,9 +10,13 @@ const collectEmployees = function() {
   while (true) {
     const firstName = prompt("Enter First Name:");
     const lastName = prompt("Enter Last Name:");
-    const salary = parseFloat(prompt("Enter Salary:"));
+    let salary = parseFloat(prompt("Enter Salary:"));
 
-  
+    if (isNaN(salary) || !isFinite(salary) || salary === '') {
+      console.log("Invalid salary input. Setting salary to $0.");
+      salary = 0; 
+    }
+
     const employee = {
       firstName: firstName,
       lastName: lastName,
